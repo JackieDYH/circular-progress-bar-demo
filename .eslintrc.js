@@ -1,3 +1,12 @@
+/*
+ * @Author: Jackie
+ * @Date: 2023-06-12 22:05:02
+ * @LastEditTime: 2023-06-14 08:49:53
+ * @LastEditors: Jackie
+ * @Description: file content
+ * @FilePath: /circular-progress-bar-demo/.eslintrc.js
+ * @version: 
+ */
 module.exports = {
   root: true,
   env: {
@@ -5,8 +14,8 @@ module.exports = {
   },
   extends: [
     "plugin:vue/essential",
-    "eslint:recommended",
-    "plugin:prettier/recommended",
+    // "eslint:recommended",
+    // "plugin:prettier/recommended",
   ],
   parserOptions: {
     parser: "@babel/eslint-parser",
