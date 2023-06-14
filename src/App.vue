@@ -1,9 +1,9 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-12 22:05:02
- * @LastEditTime: 2023-06-14 09:52:58
+ * @LastEditTime: 2023-06-14 10:25:01
  * @LastEditors: Jackie
- * @Description: file content
+ * @Description: 环形进度条
  * @FilePath: /circular-progress-bar-demo/src/App.vue
  * @version: 
 -->
@@ -11,10 +11,12 @@
   <div id="app">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <div class="warp">
+      <!-- 环形进度条 -->
       <div class="chartsWrap">
         <div id="pieCharts"></div>
         <div id="pieChartsShadow"></div>
       </div>
+      <!-- 状态信息 -->
       <div class="warningInfo">
         <img v-show="warningStatus == 0" src="./assets/weizhi.png" />
         <img v-show="warningStatus == 1" src="./assets/zhengchang.png" />
@@ -55,23 +57,26 @@ export default {
       pieValue: 20,
     };
   },
-  computed:{
-    warningStatus(){
-      if(this.pieValue == 0){
+  computed: {
+    // 动态计算
+    warningStatus() {
+      if (this.pieValue == 0) {
         return 0;
-      }else if(this.pieValue >0 && this.pieValue<=50){
+      } else if (this.pieValue > 0 && this.pieValue <= 50) {
         return 1;
-      }else{
+      } else {
         return 2;
       }
-    }
+    },
   },
   watch: {
+    // 监听值的变化
     pieValue(newValue, oldvalue) {
       this.getPieCharts(newValue);
     },
   },
   mounted() {
+    // 初始化
     this.getPieCharts(this.pieValue);
     this.getPieChartsShadow(this.pieValue);
   },
