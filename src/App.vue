@@ -1,7 +1,7 @@
 <!--
  * @Author: Jackie
  * @Date: 2023-06-12 22:05:02
- * @LastEditTime: 2023-06-14 10:25:01
+ * @LastEditTime: 2023-06-15 19:07:35
  * @LastEditors: Jackie
  * @Description: 环形进度条
  * @FilePath: /circular-progress-bar-demo/src/App.vue
@@ -9,7 +9,8 @@
 -->
 <template>
   <div id="app">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+    <!-- 封装组件的方式 -->
+    <!-- <HelloWorld :v="pieValue" /> -->
     <div class="warp">
       <!-- 环形进度条 -->
       <div class="chartsWrap">
@@ -46,7 +47,6 @@
 <script>
 import * as echarts from "echarts";
 // import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
   name: "App",
   components: {
@@ -297,7 +297,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
 #app {
   display: flex;
   justify-content: center;
